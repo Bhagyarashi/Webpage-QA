@@ -29,4 +29,4 @@
 ## To execute : 
 ### install necessary modules
 ### cd to api folder
-``` python app.py
+``` python app.py```
