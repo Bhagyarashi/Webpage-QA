@@ -4,7 +4,7 @@
 ## Input Processing
 
 ### This code defines a function to extract answers to questions from a given URL's webpage context using a pre-trained question-answering model. It sets up a Gradio interface for users to input questions and URLs, and displays the extracted answers. The code also includes a background thread to process requests from a queue asynchronously.
-![Image](webpage-qa.jpg)
+![Image](webpage-QA.jpg)
 
 
 ## Input format:
