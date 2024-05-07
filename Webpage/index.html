@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Webpage Question Answering</title>
+</head>
+<body>
+<h1>Webpage Question Answering</h1>
+<form id="question-form">
+    <label for="question">Question:</label><br>
+    <input type="text" id="question" name="question"><br>
+    <label for="url">URL:</label><br>
+    <input type="text" id="url" name="url"><br><br>
+    <button type="submit">Submit</button>
+</form>
+<div id="answer"></div>
+
+<script>
+    document.getElementById('question-form').addEventListener('submit', async function(event) {
+        event.preventDefault();
+        const question = document.getElementById('question').value;
+        const url = document.getElementById('url').value;
+        const response = await fetch('http://localhost:7860/', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ question, url })
+        });
+        const data = await response.json();
+        document.getElementById('answer').innerText = data.answer;
+    });
+</script>
+</body>
+</html>
